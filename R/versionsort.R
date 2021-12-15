@@ -18,7 +18,7 @@
 #' @seealso \code{\link{ver_sort}()}
 #' @export
 ver_order <- function(x) {
-  version_components <- strsplit(x, "[ .-]")
+  version_components <- strsplit(x, "[^\\w]+", perl = TRUE)
   Reduce(
     function(list_order, position) {
       # Extract n-th components of version code
