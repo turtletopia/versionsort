@@ -3,6 +3,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ErdaradunGaztea/versionsort/workflows/R-CMD-check/badge.svg)](https://github.com/ErdaradunGaztea/versionsort/actions)
+[![Codecov test coverage](https://codecov.io/gh/ErdaradunGaztea/versionsort/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ErdaradunGaztea/versionsort?branch=master)
 <!-- badges: end -->
 
 `versionsort` is a lightweight, dependency-free package for sorting version codes. Version codes are considered to be strings of alphanumeric characters split into components by the following separators: a quotation mark `"`, a dash `-`, and a space ` `.
