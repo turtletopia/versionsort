@@ -1,4 +1,21 @@
+#' Order version codes
 #'
+#' @description `ver_order()` returns the permutation that rearranges a vector
+#' of version codes alphanumerically.
+#'
+#' @param x [`character()`]\cr
+#'  A vector of version codes that start with a number (as in "1.5.0"), i.e.
+#'  without initial "v" (as in "v1.5.0").
+#'
+#' @return An integer vector (for details see \code{\link[base]{order}}).
+#'
+#' @examples
+#' version_codes <- c("1.5-0", "1.4-1", "0.0.0.9000", "1.4-0a", "1.4-0")
+#' ver_order(version_codes)
+#' # The line below is the same as ver_sort(version_codes)
+#' version_codes[ver_order(version_codes)]
+#'
+#' @seealso \code{\link{ver_sort}()}
 #' @export
 ver_order <- function(x) {
   version_components <- strsplit(x, "[ .-]")
@@ -37,6 +54,20 @@ ver_order <- function(x) {
   )
 }
 
+#' Sort version numbers
+#'
+#' @description `ver_sort()` returns a sorted vector of version codes, where
+#' sorting is done alphanumerically.
+#'
+#' @inheritParams ver_order
+#'
+#' @return A character vector containing the same elements as input, but
+#' reordered.
+#'
+#' @examples
+#' ver_sort(c("1.5-0", "1.4-1", "0.0.0.9000", "1.4-0a", "1.4-0"))
+#'
+#' @seealso \code{\link{ver_order}()}
 #' @export
 ver_sort <- function(x) {
   x[ver_order(x)]
