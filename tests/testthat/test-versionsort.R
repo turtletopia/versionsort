@@ -1,7 +1,7 @@
 test_that("vsort works", {
   # deepdep version codes
   expect_equal(
-    vsort(sample(
+    ver_sort(sample(
       c("0.2.0", "0.2.1", "0.2.2", "0.2.5.2", "0.2.5.3", "0.2.5.4", "0.3.0")
     )),
     c("0.2.0", "0.2.1", "0.2.2", "0.2.5.2", "0.2.5.3", "0.2.5.4", "0.3.0")
@@ -9,7 +9,7 @@ test_that("vsort works", {
 
   # lme version codes
   expect_equal(
-    vsort(sample(
+    ver_sort(sample(
       c("3.0-0 (1999/06/26)", "3.0b8a-2 (1999/06/07)", "3.1-0 (1999/08/03)")
     )),
     c("3.0-0 (1999/06/26)", "3.0b8a-2 (1999/06/07)", "3.1-0 (1999/08/03)")
@@ -17,7 +17,7 @@ test_that("vsort works", {
 
   # subplex version codes
   expect_equal(
-    vsort(sample(
+    ver_sort(sample(
       c("1.0-10", "1.0-11", "1.1-1", "1.1-2", "1.1-3", "1.1-4", "1.1-6", "1.2-2",
         "1.4-1", "1.5-2", "1.5-4", "1.6")
     )),
@@ -27,7 +27,7 @@ test_that("vsort works", {
 
   # xtable version codes
   expect_equal(
-    vsort(sample(
+    ver_sort(sample(
       c("1.0-1", "1.0-2", "1.0-6", "1.0-8", "1.0-9", "1.0-10", "1.0-11", "1.0-12",
         "1.1-1", "1.1-2", "1.2-1", "1.2-2", "1.2-3", "1.2-4", "1.2-5", "1.2-995",
         "1.3-0", "1.3-1", "1.3-2", "1.4-1", "1.4-2", "1.4-3", "1.4-5", "1.4-6",
