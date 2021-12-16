@@ -2,6 +2,7 @@
 # versionsort
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/versionsort)](https://CRAN.R-project.org/package=versionsort)
 [![R-CMD-check](https://github.com/ErdaradunGaztea/versionsort/workflows/R-CMD-check/badge.svg)](https://github.com/ErdaradunGaztea/versionsort/actions)
 [![Codecov test coverage](https://codecov.io/gh/ErdaradunGaztea/versionsort/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ErdaradunGaztea/versionsort?branch=master)
 <!-- badges: end -->
