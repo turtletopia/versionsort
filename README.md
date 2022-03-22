@@ -22,7 +22,7 @@ devtools::install_github("ErdaradunGaztea/versionsort")
 
 ## Why use versionsort?
 
-`versionsort` sorts version codes better than base sort function. Most importantly, it'll place `1.0.10` behind `1.0.9` instead of between `1.0.1` and `1.0.2`. It can handle letters too, even concatenated with numbers. For example, `versionsort` will correctly detect `8` and `10` in `1.8b0a` and `0.3-10vcd1-devel`. It won't drop the rest of the code, though, correctly placing these after `1.8` and `0.3-10` versions.
+`versionsort` sorts version codes better than base sort function. Most importantly, it'll place `1.0.10` behind `1.0.9` instead of between `1.0.1` and `1.0.2`. It can handle letters too, even concatenated with numbers. For example, `versionsort` will correctly detect `8` and `10` in `1.8b0a` and `0.3-10vcd1-devel`. It won't drop the rest of the code either, correctly placing these after `1.8` and `0.3-10` versions.
 
 Basically, `versionsort` has two functions, mimicking base R division: `vec_order()` and `vec_sort()`.
 
