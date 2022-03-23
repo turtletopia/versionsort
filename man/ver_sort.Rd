@@ -2,7 +2,7 @@
 % Please edit documentation in R/versionsort.R
 \name{ver_sort}
 \alias{ver_sort}
-\title{Sort version numbers}
+\title{Sort version codes}
 \usage{
 ver_sort(x)
 }

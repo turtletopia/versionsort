@@ -54,7 +54,7 @@ ver_order <- function(x) {
   )
 }
 
-#' Sort version numbers
+#' Sort version codes
 #'
 #' @description `ver_sort()` returns a sorted vector of version codes, where
 #' sorting is done alphanumerically.
