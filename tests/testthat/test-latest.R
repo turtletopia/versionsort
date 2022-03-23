@@ -38,3 +38,10 @@ test_that("ver_latest extracts number subcomponent correctly", {
     "3.10-0 (1999/06/26)"
   )
 })
+
+test_that("ver_latest returns exactly one answer even if there are duplicates", {
+  expect_equal(
+    ver_latest(sample(c("0.2.5", "0.2.5.3", "0.2.5.4", "0.3.0", "0.3.0"))),
+    "0.3.0"
+  )
+})
