@@ -1,3 +1,7 @@
+# versionsort 1.1.0
+
+* Implemented `ver_latest()`.
+
 # versionsort 1.0.0
 
 * Implemented `ver_sort()` and `ver_order()`.
