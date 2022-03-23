@@ -18,6 +18,9 @@
 #' @seealso \code{\link{ver_sort}()}
 #' @export
 ver_order <- function(x) {
+  # Early return if input is empty
+  if (length(x) == 0) return(integer())
+  
   version_components <- strsplit(x, "[^\\w]+", perl = TRUE)
   Reduce(
     function(list_order, position) {
