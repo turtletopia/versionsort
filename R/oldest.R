@@ -40,20 +40,26 @@ ver_oldest <- function(x) {
           initial_number_match, "match.length", exact = TRUE)
         )
       )
-      additional_code <- substring(nth_components, 1 + attr(
-        initial_number_match, "match.length", exact = TRUE)
-      )
       
       # Compare numeric values first
       if (any(!is.na(initial_number))) {
         # Codes are not empty, so initial_number is NA only when starting with a letter
         # That means NA initial numbers are later than anything else
         indices <- indices[which(initial_number == min(initial_number, na.rm = TRUE))]
+        nth_components <- vapply(
+          version_components[indices], `[`, FUN.VALUE = character(1), position
+        )
+        initial_number_match <- regexpr("^\\d+", nth_components)
       }
       
       # Compare codes only if necessary
-      if (length(indices) > 1 & any(additional_code != "")) {
-        indices <- indices[which(additional_code == min(additional_code))]
+      if (length(indices) > 1) {
+        additional_code <- substring(nth_components, 1 + attr(
+          initial_number_match, "match.length", exact = TRUE)
+        )
+        if (any(additional_code != "")) {
+          indices <- indices[which(additional_code == min(additional_code))]
+        }
       }
       indices
     },

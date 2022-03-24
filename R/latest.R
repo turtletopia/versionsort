@@ -41,9 +41,6 @@ ver_latest <- function(x) {
           initial_number_match, "match.length", exact = TRUE)
         )
       )
-      additional_code <- substring(nth_components, 1 + attr(
-        initial_number_match, "match.length", exact = TRUE)
-      )
       # Compare numeric values first
       if (any(is.na(initial_number))) {
         # Codes are not empty, so initial_number is NA only when starting with a letter
@@ -55,8 +52,17 @@ ver_latest <- function(x) {
       }
       
       # Compare codes only if necessary
-      if (length(indices) > 1 & any(additional_code != "")) {
-        indices <- indices[which(additional_code == max(additional_code))]
+      if (length(indices) > 1) {
+        nth_components <- vapply(
+          version_components[indices], `[`, FUN.VALUE = character(1), position
+        )
+        initial_number_match <- regexpr("^\\d+", nth_components)
+        additional_code <- substring(nth_components, 1 + attr(
+          initial_number_match, "match.length", exact = TRUE)
+        )
+        if (any(additional_code != "")) {
+          indices <- indices[which(additional_code == max(additional_code))]
+        }
       }
       indices
     },
