@@ -44,7 +44,14 @@ ver_latest <- function(x) {
         initial_number_match, "match.length", exact = TRUE)
       )
       # Compare numeric values first
-      indices <- indices[which(initial_number == max(initial_number))]
+      if (any(is.na(initial_number))) {
+        # Codes are not empty, so initial_number is NA only when starting with a letter
+        # That means NA initial numbers are later than anything else
+        indices <- indices[which(is.na(initial_number))]
+      } else {
+        # Else simply choose maximum of the numbers
+        indices <- indices[which(initial_number == max(initial_number))]
+      }
       
       # Compare codes only if necessary
       if (length(indices) > 1 & any(additional_code != "")) {
