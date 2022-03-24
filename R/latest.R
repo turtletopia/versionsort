@@ -11,6 +11,9 @@
 #'
 #' @export
 ver_latest <- function(x) {
+  if (length(x) == 0)
+    stop("cannot select latest version when given empty input")
+  
   version_components <- strsplit(x, "[^\\w]+", perl = TRUE)
   ret <- Reduce(
     function(indices, position) {
