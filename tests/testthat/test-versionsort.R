@@ -1,4 +1,4 @@
-test_that("vsort works", {
+test_that("ver_sort works", {
   # deepdep version codes
   expect_equal(
     ver_sort(sample(deepdep_versions)),
