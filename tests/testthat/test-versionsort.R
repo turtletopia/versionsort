@@ -1,43 +1,46 @@
-test_that("vsort works", {
+test_that("ver_sort works", {
   # deepdep version codes
   expect_equal(
-    ver_sort(sample(
-      c("0.2.0", "0.2.1", "0.2.2", "0.2.5.2", "0.2.5.3", "0.2.5.4", "0.3.0")
-    )),
-    c("0.2.0", "0.2.1", "0.2.2", "0.2.5.2", "0.2.5.3", "0.2.5.4", "0.3.0")
+    ver_sort(sample(deepdep_versions)),
+    deepdep_versions
   )
 
   # lme version codes
   expect_equal(
-    ver_sort(sample(
-      c("3.0-0 (1999/06/26)", "3.0b8a-2 (1999/06/07)", "3.1-0 (1999/08/03)")
-    )),
-    c("3.0-0 (1999/06/26)", "3.0b8a-2 (1999/06/07)", "3.1-0 (1999/08/03)")
+    ver_sort(sample(lme_versions)),
+    lme_versions
   )
 
   # subplex version codes
   expect_equal(
-    ver_sort(sample(
-      c("1.0-10", "1.0-11", "1.1-1", "1.1-2", "1.1-3", "1.1-4", "1.1-6", "1.2-2",
-        "1.4-1", "1.5-2", "1.5-4", "1.6")
-    )),
-    c("1.0-10", "1.0-11", "1.1-1", "1.1-2", "1.1-3", "1.1-4", "1.1-6", "1.2-2",
-      "1.4-1", "1.5-2", "1.5-4", "1.6")
+    ver_sort(sample(subplex_versions)),
+    subplex_versions
   )
 
   # xtable version codes
   expect_equal(
-    ver_sort(sample(
-      c("1.0-1", "1.0-2", "1.0-6", "1.0-8", "1.0-9", "1.0-10", "1.0-11", "1.0-12",
-        "1.1-1", "1.1-2", "1.2-1", "1.2-2", "1.2-3", "1.2-4", "1.2-5", "1.2-995",
-        "1.3-0", "1.3-1", "1.3-2", "1.4-1", "1.4-2", "1.4-3", "1.4-5", "1.4-6",
-        "1.5-0", "1.5-1", "1.5-2", "1.5-3", "1.5-4", "1.5-5", "1.5-6", "1.6-0",
-        "1.7-0", "1.7-1", "1.7-3", "1.7-4", "1.8-0", "1.8-2", "1.8-3", "1.8-4")
-    )),
-    c("1.0-1", "1.0-2", "1.0-6", "1.0-8", "1.0-9", "1.0-10", "1.0-11", "1.0-12",
-      "1.1-1", "1.1-2", "1.2-1", "1.2-2", "1.2-3", "1.2-4", "1.2-5", "1.2-995",
-      "1.3-0", "1.3-1", "1.3-2", "1.4-1", "1.4-2", "1.4-3", "1.4-5", "1.4-6",
-      "1.5-0", "1.5-1", "1.5-2", "1.5-3", "1.5-4", "1.5-5", "1.5-6", "1.6-0",
-      "1.7-0", "1.7-1", "1.7-3", "1.7-4", "1.8-0", "1.8-2", "1.8-3", "1.8-4")
+    ver_sort(sample(xtable_versions)),
+    xtable_versions
+  )
+})
+
+test_that("ver_order returns empty vector if input is empty too", {
+  expect_equal(
+    ver_order(character()),
+    integer()
+  )
+})
+
+test_that("ver_sort returns empty vector if input is empty too", {
+  expect_equal(
+    ver_sort(character()),
+    character()
+  )
+})
+
+test_that("ver_sort accepts components without numbers", {
+  expect_equal(
+    ver_sort(sample(letter_versions)),
+    letter_versions
   )
 })
