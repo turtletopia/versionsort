@@ -45,3 +45,17 @@ test_that("ver_latest returns exactly one answer even if there are duplicates", 
     "0.3.0"
   )
 })
+
+test_that("ver_latest accepts components without numbers", {
+  expect_equal(
+    ver_latest(sample(letter_versions)),
+    letter_versions[length(letter_versions)]
+  )
+})
+
+test_that("ver_latest raises an exception when passed a vector of length 0", {
+  expect_error(
+    ver_latest(character()),
+    "cannot select latest version when given empty input"
+  )
+})

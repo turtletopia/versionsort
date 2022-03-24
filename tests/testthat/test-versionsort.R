@@ -37,3 +37,10 @@ test_that("ver_sort returns empty vector if input is empty too", {
     character()
   )
 })
+
+test_that("ver_sort accepts components without numbers", {
+  expect_equal(
+    ver_sort(sample(letter_versions)),
+    letter_versions
+  )
+})
