@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 
-[![CRAN status](https://www.r-pkg.org/badges/version/versionsort)](https://CRAN.R-project.org/package=versionsort) [![R-CMD-check](https://github.com/ErdaradunGaztea/versionsort/workflows/R-CMD-check/badge.svg)](https://github.com/ErdaradunGaztea/versionsort/actions) [![Codecov test coverage](https://codecov.io/gh/ErdaradunGaztea/versionsort/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ErdaradunGaztea/versionsort?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/versionsort)](https://CRAN.R-project.org/package=versionsort) [![R-CMD-check](https://github.com/turtletopia/versionsort/workflows/R-CMD-check/badge.svg)](https://github.com/turtletopia/versionsort/actions) [![Codecov test coverage](https://codecov.io/gh/turtletopia/versionsort/branch/master/graph/badge.svg)](https://app.codecov.io/gh/turtletopia/versionsort?branch=master)
 
 <!-- badges: end -->
 
@@ -30,7 +30,7 @@ install.packages("versionsort")
 
 # Install the development version from GitHub:
 # install.packages("devtools")
-devtools::install_github("ErdaradunGaztea/versionsort")
+devtools::install_github("turtletopia/versionsort")
 ```
 
 ## How to use versionsort?
